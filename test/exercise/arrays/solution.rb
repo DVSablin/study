@@ -14,4 +14,3 @@ module Exercise
     end
   end
 end
-
