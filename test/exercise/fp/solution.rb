@@ -10,8 +10,9 @@ module Exercise
         all_names.reduce(:+) / all_names.length
       end
 
-      def chars_count(_films, _threshold)
-        0
+      def chars_count(films, threshold)
+        films.select { |item|  item['rating_kinopoisk'].to_f >= threshold && item['name'].include?('и') }
+             .map { |item| item['name'].count('и') }.reduce(:+)
       end
     end
   end
